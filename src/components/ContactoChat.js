@@ -21,7 +21,7 @@ function ContactoChat() {
       
       <Container className='p-3'>
         <h4 className='px-3 py-3 bg-success'>
-          <Image src={`/${contact.contacto}.png`} roundedCircle style={{ maxHeight: '60px', marginRight:'20px'}} />
+          <Image src={`/${contact.contacto}.png`} roundedCircle style={{ maxHeight: '60px', marginRight:'20px'}} alt={contact.contacto}/>
           {contact.contacto}
         </h4>
         <ListGroup>
@@ -29,7 +29,7 @@ function ContactoChat() {
             const esEmisor = mensaje.emisor === contact.contacto;
             return (
               <ListGroupItem key={index} className={esEmisor ? "text-start border-0" : "text-end border-0"}>
-                <p><Image src={`/${mensaje.emisor}.png`} rounded style={{ maxHeight: '25px', marginInline: '10px' }} />{mensaje.contenido}</p>
+                <p><Image src={`/${mensaje.emisor}.png`} rounded style={{maxHeight: '25px', marginInline: '10px'}} alt={mensaje.emisor}/>{mensaje.contenido}</p>
                 <small>{new Date(mensaje.timestamp).toLocaleString()} - {mensaje.estado}</small>
                 <hr style={{ border: "1px dashed green", width: "100%" }} />
               </ListGroupItem>
